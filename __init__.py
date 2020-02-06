@@ -1,10 +1,10 @@
 from modules import cbpi
 import requests
 
-def get_param(param_name, default_value, param_type, param_desc):
+def get_param(param_name, default_value, param_type, param_desc, param_opts=None):
     value = cbpi.get_config_parameter(param_name, None)
     if value is None:
-        cbpi.add_config_parameter(param_name, default_value, param_type, param_desc)
+        cbpi.add_config_parameter(param_name, default_value, param_type, param_desc, param_opts)
         return default_value
     return value
 
