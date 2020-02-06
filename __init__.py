@@ -12,10 +12,10 @@ def get_config():
     config = {}
     config['api_url'] = get_param("brewersfriend_api_url", "https://log.brewersfriend.com/stream/", "text", "BrewersFriend API URL Prefix")
     config['api_key'] = get_param("brewersfriend_api_key", "", "text", "BrewersFriend API Key")
-    config['temp_sensor'] = get_param("brewersfriend_temp_sensor", "", "sensor", "BrewersFriend temperature sensor, i.e. 'sensor'")
-    config['temp_unit'] = get_param("brewersfriend_temp_unit", "C", "text", "BrewersFriend temperature unit (C or F for Celsius or Fahrenheit)")
-    config['gravity_sensor'] = get_param("brewersfriend_gravity_sensor", "", "sensor", "BrewersFriend gravity sensor, i.e. 'sensor2'")
-    config['gravity_unit'] = get_param("brewersfriend_gravity_unit", "G", "text", "BrewersFriend gravity unit (G or P for Gravity or Plato)")
+    config['temp_sensor'] = get_param("brewersfriend_temp_sensor", "sensor", "text", "BrewersFriend temperature sensor, i.e. 'sensor'")
+    config['temp_unit'] = get_param("brewersfriend_temp_unit", "C", "select", "BrewersFriend temperature unit (C or F for Celsius or Fahrenheit)", ["C", "F"])
+    config['gravity_sensor'] = get_param("brewersfriend_gravity_sensor", "", "text", "BrewersFriend gravity sensor, i.e. 'sensor2'")
+    config['gravity_unit'] = get_param("brewersfriend_gravity_unit", "G", "select", "BrewersFriend gravity unit (G or P for Gravity or Plato)", ["G", "P"])
     return config
 
 def log(s):
